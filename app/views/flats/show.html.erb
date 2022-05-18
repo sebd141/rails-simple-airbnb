@@ -6,6 +6,8 @@
   <%= @flat.price_per_night %>
   <%= @flat.number_of_guest %>
   <%= link_to "Edit '#{@flat.name}'", edit_flat_path(@flat) %>
+  <%= link_to "Remove '#{@flat.name}'", flat_path(@flat), method: :delete ,
+            data: { confirm: "Are you sure?" }%>
   </div>
 
 </div>
