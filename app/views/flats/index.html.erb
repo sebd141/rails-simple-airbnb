@@ -1,16 +1,36 @@
-<div class="header">
-  <p>Simple Airbnb</p>
-  <button type="button" class="btn btn-outline-primary">Add a flat</button>
-</div>
-<div class="container">
-  <h1>All our flats</h1>
-  <div class="card">
-    <%= @flats.each do |flat| %>
-      <%= flat.name %>
-      <%= flat.address %>
-      <%= flat.price_per_night %>
-      <%= flat.number_of_guest %>
-      <%= link_to 'More info', edit_flat_path(flat) %>
-    <% end %>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Flats</h1>
+    </div>
   </div>
+
+  <div class="row">
+      <div class="col-md-4">
+        <div class="flat-card">
+          <div class="flat-card-image" style="background-image: url('https://images.pexels.com/photos/2459/stairs-home-loft-lifestyle.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500')"></div>
+          <div class="flat-card-content">
+            <div class="flat-card-title">
+              <%= @flats.each do |flat| %>
+                <h4><%= flat.name %></h4>
+            </div>
+            <div class="address">
+              Address:
+            </div>
+            <%= flat.address %>
+            <div class="price">
+              Price a night
+            </div>
+            <%= flat.price_per_night %>
+            <div class="guest">
+            Maximum guest
+            </div>
+            <%= flat.number_of_guest %>
+            <div class="moreInfo">
+              <%= link_to 'More info', flat_path(flat) %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
