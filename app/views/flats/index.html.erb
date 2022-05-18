@@ -1,0 +1,16 @@
+<div class="header">
+  <p>Simple Airbnb</p>
+  <button type="button" class="btn btn-outline-primary">Add a flat</button>
+</div>
+<div class="container">
+  <h1>All our flats</h1>
+  <div class="card">
+    <%= @flats.each do |flat| %>
+      <%= flat.name %>
+      <%= flat.address %>
+      <%= flat.price_per_night %>
+      <%= flat.number_of_guest %>
+      <%= link_to 'More info', edit_flat_path(flat) %>
+    <% end %>
+  </div>
+</div>
